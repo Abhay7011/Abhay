@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.util.Patterns;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -23,6 +24,8 @@ public class SignupActivity extends AppCompatActivity {
     TextInputLayout regNumber, regUsername, regName, regEmail, regPassword;
     Button regToLoginBtn;
     ImageButton regButton;
+
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -54,7 +57,6 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("user");
 
@@ -66,19 +68,51 @@ public class SignupActivity extends AppCompatActivity {
                 String password = regPassword.getEditText().getText().toString();
 
 
+
+
                 if (TextUtils.isEmpty(regNumber.getEditText().getText().toString())) {
-                    Toast.makeText(SignupActivity.this, "Enter No.....", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
 
                 } else if (regNumber.getEditText().getText().toString().replace("", "").length() != 10) {
                     Toast.makeText(SignupActivity.this, "Enter Correct No.....", Toast.LENGTH_SHORT).show();
+                }
 
-                } else {
+
+                else if (TextUtils.isEmpty(regUsername.getEditText().getText().toString())) {
+                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (TextUtils.isEmpty(regName.getEditText().getText().toString())) {
+                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (TextUtils.isEmpty(regPassword.getEditText().getText().toString())) {
+                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
+
+                }
+
+                else if (TextUtils.isEmpty(regEmail.getEditText().getText().toString())) {
+                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+                else if (regEmail.equals("") || regEmail.equals(null)||!regEmail.getEditText().getText().toString().matches(emailPattern)) {
+                    regEmail.setError("Please enter right email Address");
+                }
+
+
+
+
+                else {
                     Intent intent = new Intent(SignupActivity.this, OtpActivity.class);
                     intent.putExtra("phoneNo",phoneno);
                     startActivity(intent);
                     finish();
 
                 }
+
+
 
 
 
@@ -90,4 +124,7 @@ public class SignupActivity extends AppCompatActivity {
         });
 
     }
+
+
+
 }
