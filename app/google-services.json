@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "794915291151",
+    "project_id": "abhay-fb6bf",
+    "storage_bucket": "abhay-fb6bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794915291151:android:73bc4fd588edcddf31637a",
+        "android_client_info": {
+          "package_name": "com.example.abhay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794915291151-c1uu2i4p9sj4sc7hj2n52ou7ftovk62j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abhay",
+            "certificate_hash": "f9d5ef297668f77bb7cd48a6f2baaeead2ad457e"
+          }
+        },
+        {
+          "client_id": "794915291151-h5e0ehdmpltks0drub14rojka70kmngl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMSFiXoHC9jiPykBd1UPzXJHeaZCc6EUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794915291151-h5e0ehdmpltks0drub14rojka70kmngl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
