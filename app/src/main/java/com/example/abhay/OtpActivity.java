@@ -142,7 +142,8 @@ public class OtpActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
 
-                            startActivity(new Intent(OtpActivity.this,UserActivity.class));
+                            startActivity(new Intent(OtpActivity.this,MainActivity.class));
+                            Toast.makeText(OtpActivity.this, "Verification Successful", Toast.LENGTH_SHORT).show();
                             finish();
                             FirebaseUser user = task.getResult().getUser();
                             // Update UI

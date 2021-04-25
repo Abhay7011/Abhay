@@ -11,7 +11,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class UserActivity extends AppCompatActivity {
 
-    TextInputLayout fullname, email, phoneno, password;
+    TextInputLayout fullname, email, phoneno, password, username;
     TextView fullnameLabel, usernameLabel;
 
     @Override
@@ -27,6 +27,7 @@ public class UserActivity extends AppCompatActivity {
         fullname = findViewById(R.id.fullname4);
         phoneno = findViewById(R.id.Number4);
         email = findViewById(R.id.Email1);
+        username = findViewById(R.id.Username4);
         password = findViewById(R.id.password4);
         fullnameLabel = findViewById(R.id.welcometext2);
         usernameLabel = findViewById(R.id.textView3);
@@ -47,6 +48,7 @@ public class UserActivity extends AppCompatActivity {
         usernameLabel.setText(user_username);
         phoneno.getEditText().setText(user_phoneno);
         email.getEditText().setText(user_email);
+        username.getEditText().setText(user_username);
         password.getEditText().setText(user_password);
         fullname.getEditText().setText(user_name);
 

@@ -77,33 +77,6 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(SignupActivity.this, "Enter Correct No.....", Toast.LENGTH_SHORT).show();
                 }
 
-
-                else if (TextUtils.isEmpty(regUsername.getEditText().getText().toString())) {
-                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
-
-                }
-                else if (TextUtils.isEmpty(regName.getEditText().getText().toString())) {
-                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
-
-                }
-                else if (TextUtils.isEmpty(regPassword.getEditText().getText().toString())) {
-                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
-
-                }
-
-                else if (TextUtils.isEmpty(regEmail.getEditText().getText().toString())) {
-                    Toast.makeText(SignupActivity.this, "Detail is Compulsory", Toast.LENGTH_SHORT).show();
-
-                }
-
-
-                else if (regEmail.equals("") || regEmail.equals(null)||!regEmail.getEditText().getText().toString().matches(emailPattern)) {
-                    regEmail.setError("Please enter right email Address");
-                }
-
-
-
-
                 else {
                     Intent intent = new Intent(SignupActivity.this, OtpActivity.class);
                     intent.putExtra("phoneNo",phoneno);
